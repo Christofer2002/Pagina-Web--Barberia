@@ -240,8 +240,8 @@ textarea {
 }
 
 form {
-  padding: 37.5px;
-  margin: 50px 0;
+  padding: 20px 37px;
+  margin-bottom: 50px;
 }
 
 h1 {
@@ -261,15 +261,16 @@ h1 {
 
 .icon_wrapper {
   margin: 50px auto 0;
-  width: 100%;
+  width: 20%;
+  height: 10%;
 }
 
 .icon {
   display: block;
   fill: #474544;
-  height: 50px;
+  height: 50%;
   margin: 0 auto;
-  width: 50px;
+  width: 50%;
 }
 
 .email {
@@ -429,4 +430,8 @@ textarea {
 
 input[type='text'], [type='email'], select, textarea, .message, select, .subject {
   font-size: 1.3rem;
+}
+
+#container:hover{
+  border-color: var(--naranja);
 }

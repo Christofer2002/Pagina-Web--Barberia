@@ -240,7 +240,7 @@ textarea {
 }
 
 form {
-  padding: 20px 37px;
+  padding: 20px;
   margin-bottom: 50px;
 }
 
@@ -261,16 +261,16 @@ h1 {
 
 .icon_wrapper {
   margin: 50px auto 0;
-  width: 20%;
-  height: 10%;
+  width: 10%;
+  height: auto;
 }
 
 .icon {
   display: block;
   fill: #474544;
-  height: 50%;
+  max-height: auto;
   margin: 0 auto;
-  width: 50%;
+  max-width: 100%;
 }
 
 .email {
@@ -420,8 +420,12 @@ textarea {
   }
   
   .icon {
-    height: 35px;
-    width: 35px;
+    height: 90px;
+    width: 70px !important;
+  }
+
+  .icon_wrapper{
+    width: auto;
   }
   
   .underline {
@@ -429,7 +433,7 @@ textarea {
   }
   
   input[type='text'], [type='email'], select, textarea {
-    font-size: 0.7em !important;
+    font-size: 1em !important;
   }
 }
 

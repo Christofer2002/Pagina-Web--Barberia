@@ -1,0 +1,89 @@
+/* Para que el carrusel ocupe toda la altura de la pantalla */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100vh; /* 100% de la ventana */
+  width: 100%;
+}
+
+/* Imagen a pantalla completa con zoom */
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: zoom 10s infinite alternate ease-in-out;
+  position: relative;
+  z-index: 0;
+}
+
+/* Capa oscura sobre las imágenes con un pseudo-elemento */
+.carousel-inner {
+  position: relative;
+}
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0, right:0, bottom:0, left:0 */
+  background: rgba(0, 0, 0, 0.6); /* Capa oscura */
+  z-index: 1; /* Sobre la imagen, debajo del texto */
+}
+
+/* Efecto de zoom */
+@keyframes zoom {
+  0%   { transform: scale(1);   }
+  100% { transform: scale(1.1); }
+}
+
+/* Contenedor FIJO para el texto y botones */
+.carousel-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2; /* Por encima de la capa oscura */
+  width: 60%;
+}
+
+/* Título y subtítulo */
+.carousel-overlay-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--blanco);
+}
+
+.carousel-overlay-text p {
+  font-size: 2rem;
+  color: var(--blanco);
+  margin: 3rem;
+}
+
+/* Botones */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Responsivo: Ajustar en pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-overlay-text {
+    width: 90%;
+  }
+
+  .carousel-overlay-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-overlay-text p {
+    font-size: .9rem;
+  }
+
+  .btn-primary, .btn-outline-light {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
